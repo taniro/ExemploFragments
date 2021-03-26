@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <!-- EXEMPLO 1 -->
+
     <FrameLayout
         android:id="@+id/layout_alvo"
         android:layout_width="match_parent"
@@ -28,7 +29,8 @@
         android:id="@+id/layout_alvo"
         android:layout_width="match_parent"
         android:layout_height="0dp"/>
-     -->
+
+        -->
 
     <!-- EXEMPLO 3 -->
     <!--
