@@ -23,18 +23,21 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
 
          */
-
         /*
+
         fragmentTransaction = fm.beginTransaction()
         val f2 = Fragment2()
-        fragmentTransaction.add(R.id.layout_alvo, f2, "Fragment 2")
+        fragmentTransaction.replace(R.id.layout_alvo, f2, "Fragment 2")
         fragmentTransaction.commit()
 
          */
 
-        /*
+
+
+
         // Create new fragment and transaction
 
+        /*
         var fm = supportFragmentManager
         var fragmentTransaction = fm.beginTransaction()
         var f1 = Fragment1()
@@ -51,9 +54,10 @@ class MainActivity : AppCompatActivity() {
         ft2.addToBackStack(null)
         // Commit the transaction
         ft2.commit()
-        */
 
-        /*
+         */
+
+
 
         button1 = findViewById(R.id.btn1)
         button2 = findViewById(R.id.btn2)
@@ -75,7 +79,6 @@ class MainActivity : AppCompatActivity() {
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
-         */
 
 
     }

@@ -9,6 +9,7 @@
 
     <!-- EXEMPLO 1 -->
 
+    <!--
     <FrameLayout
         android:id="@+id/layout_alvo"
         android:layout_width="match_parent"
@@ -21,19 +22,18 @@
             android:layout_width="match_parent"
             />
     </FrameLayout>
+    -->
 
     <!--EXEMPLO 2 -->
-    <!--
+
     <FrameLayout
         android:layout_weight="7"
         android:id="@+id/layout_alvo"
         android:layout_width="match_parent"
         android:layout_height="0dp"/>
 
-        -->
 
     <!-- EXEMPLO 3 -->
-    <!--
     <LinearLayout
         android:layout_weight="1"
         android:gravity="center_horizontal"
@@ -53,5 +53,4 @@
             android:layout_height="wrap_content"
             android:text="Botão 2" />
     </LinearLayout>
-    -->
 </LinearLayout>
