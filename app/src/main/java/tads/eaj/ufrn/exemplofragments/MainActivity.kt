@@ -3,16 +3,49 @@ package tads.eaj.ufrn.exemplofragments
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import tads.eaj.ufrn.exemplofragments.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var button1:Button
-    lateinit var button2:Button
+    lateinit var binding:ActivityMainBinding
+
+
+    /*
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = Navigation.findNavController(this, R.id.myNavHostFragment)
+        return navController.navigateUp()
+    }
+
+     */
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = Navigation.findNavController(this, R.id.myNavHostFragment)
+        return NavigationUI.navigateUp(navController,binding.drawerView)
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.myNavHostFragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        NavigationUI.setupActionBarWithNavController(this, navController, binding.drawerView)
+        NavigationUI.setupWithNavController(binding.navView, navController)
+
+        /*
+        val fm = supportFragmentManager
+        val ft = fm.beginTransaction()
+        val fragment = Fragment1()
+        ft.add(R.id.layout_alvo, fragment, "fragment")
+        ft.commit()
+         */
 
 
         /*
@@ -59,6 +92,7 @@ class MainActivity : AppCompatActivity() {
 
 
 
+        /*
         button1 = findViewById(R.id.btn1)
         button2 = findViewById(R.id.btn2)
 
@@ -67,18 +101,20 @@ class MainActivity : AppCompatActivity() {
             var fragmentTransaction = fm.beginTransaction()
             var f1 = Fragment1()
             fragmentTransaction.replace(R.id.layout_alvo, f1, "Fragment 1")
-            fragmentTransaction.addToBackStack(null)
+            //fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
 
         button2.setOnClickListener {
             var fm = supportFragmentManager
             var fragmentTransaction = fm.beginTransaction()
-            var f2 = Fragment2()
+            var f2 = Fragment3()
             fragmentTransaction.replace(R.id.layout_alvo, f2, "Fragment 2")
             fragmentTransaction.addToBackStack(null)
             fragmentTransaction.commit()
         }
+
+         */
 
 
     }

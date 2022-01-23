@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Fragment 3"
+        android:id="@+id/fragment3"
+        />
+    <item android:title="Editar" android:id="@+id/editar" />
+    <item android:title="Deletar" android:id="@+id/deletar" />
+    <item
+        android:id="@+id/app_bar_search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="Pesquisar"
+        app:showAsAction="always"
+        app:actionViewClass="android.widget.SearchView" />
+</menu>

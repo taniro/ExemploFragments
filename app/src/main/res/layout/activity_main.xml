@@ -1,56 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- EXEMPLO 1 -->
-
-    <!--
-    <FrameLayout
-        android:id="@+id/layout_alvo"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <fragment
-            android:id="@+id/fragment1"
-            android:name="tads.eaj.ufrn.exemplofragments.Fragment1"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent"
-            />
-    </FrameLayout>
-    -->
-
-    <!--EXEMPLO 2 -->
-
-    <FrameLayout
-        android:layout_weight="7"
-        android:id="@+id/layout_alvo"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"/>
-
-
-    <!-- EXEMPLO 3 -->
     <LinearLayout
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
 
-        <Button
-            android:id="@+id/btn1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Botão 1" />
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/drawerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/btn2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Botão 2" />
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/myNavHostFragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:navGraph="@navigation/navigation"
+                app:defaultNavHost="true" />
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navView"
+                app:menu="@menu/menu_frag1"
+                android:layout_gravity="start"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </androidx.drawerlayout.widget.DrawerLayout>
+
+
+        <!-- EXEMPLO 1 -->
+
+        <!--
+        <FrameLayout
+            android:id="@+id/layout_alvo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <fragment
+                android:id="@+id/fragment3"
+                android:name="tads.eaj.ufrn.exemplofragments.Fragment1"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                />
+        </FrameLayout>
+        -->
+
+        <!--EXEMPLO 2
+                -->
+        <!--
+        <FrameLayout
+            android:id="@+id/layout_alvo"
+            android:layout_weight="7"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+            -->
+
+
+        <!-- EXEMPLO 3 -->
+
+        <!--
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Botão 1" />
+
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Botão 2" />
+        </LinearLayout>
+        -->
+
     </LinearLayout>
-</LinearLayout>
+</layout>
